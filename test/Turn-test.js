@@ -33,15 +33,52 @@ describe('Turn', () => {
     expect(card.answers).to.deep.equal(['object', 'array', 'function']);
   });
 
-  it('should be a function', () => {
+  it("should return a user's guess", () => {
     const card = new Card(
-      15,
-      'The callback function for reduce() takes in an accumulator and a current element.',
-      ['true', 'false'],
-      'true'
+      17,
+      'What does the reduce() method take in?',
+      [
+        'callback function and initializer',
+        'callback function and current element',
+        'callback function and accumulator',
+      ],
+      'callback function and initializer'
     );
-    const turn = new Turn('false', card);
+    const turn = new Turn('callback function and current element', card);
 
-    expect(turn.returnGuess('false')).to.equal('false');
+    const userGuess = turn.returnGuess();
+
+    expect(userGuess).to.equal('callback function and current element');
+  });
+
+  it('should return the current card', () => {
+    const card = new Card(
+      21,
+      'Which iteration method is best for DOM manipulation?',
+      ['forEach()', 'map()', 'reduce()'],
+      'forEach()'
+    );
+    const turn = new Turn('forEach()', card);
+
+    const currentCard = turn.returnCard();
+
+    expect(currentCard).to.deep.equal({
+      id: 21,
+      question: 'Which iteration method is best for DOM manipulation?',
+      answers: ['forEach()', 'map()', 'reduce()'],
+      correctAnswer: 'forEach()',
+    });
+  });
+
+  it("should return a boolean indicating if user's guess is correct", () => {
+    const card = new Card(
+      26,
+      'shift(), unshift(), pop(), and push() are examples of what type of array property method?',
+      ['mutator method', 'accessor method', 'iteration method'],
+      'mutator method'
+    );
+    const turn = new Turn('mutator method', card);
+
+    expect(turn.evaluateGuess()).to.equal(true);
   });
 });
