@@ -62,12 +62,11 @@ describe('Turn', () => {
 
     const currentCard = turn.returnCard();
 
-    expect(currentCard).to.deep.equal({
-      id: 21,
-      question: 'Which iteration method is best for DOM manipulation?',
-      answers: ['forEach()', 'map()', 'reduce()'],
-      correctAnswer: 'forEach()',
-    });
+    expect(currentCard.answers).to.deep.equal([
+      'forEach()',
+      'map()',
+      'reduce()',
+    ]);
   });
 
   it("should return a boolean indicating if user's guess is correct", () => {
@@ -80,5 +79,17 @@ describe('Turn', () => {
     const turn = new Turn('mutator method', card);
 
     expect(turn.evaluateGuess()).to.equal(true);
+  });
+
+  it('should let the user know if their guess is correct or not', () => {
+    const card = new Card(
+      29,
+      'map() takes in two optional arguments: the index of the current element, and the array that map was called upon',
+      ['true', 'false'],
+      'true'
+    );
+    const turn = new Turn('false', card);
+
+    expect(turn.giveFeedback()).to.equal('incorrect!');
   });
 });
