@@ -34,5 +34,14 @@ describe('Deck', () => {
 
   it('should take in an array of cards', () => {
     expect(deck.currentDeck[1].correctAnswer).to.equal('gallbladder');
+    expect(deck.currentDeck[2].answers).to.deep.equal([
+      'Lex',
+      'William',
+      'Fitzgerald',
+    ]);
+  });
+
+  it('should be able to count the number of cards in a deck', () => {
+    expect(deck.countCards()).to.equal(3);
   });
 });
