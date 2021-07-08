@@ -6,7 +6,6 @@ class Round {
     this.turns = 0;
     this.currentCard = this.deck[0];
     this.incorrectGuesses = [];
-    //👆 this might need to have a variable for the index, but this will work and can just be reassigned
   }
 
   returnCurrentCard() {
@@ -15,14 +14,28 @@ class Round {
 
   takeTurn(userGuess) {
     let turn = new Turn(userGuess, this.currentCard);
-    turn.evaluateGuess();
+    // turn.evaluateGuess();
     if (!turn.evaluateGuess()) {
       this.incorrectGuesses.push(this.currentCard.id);
     }
-    turn.giveFeedback();
     this.turns++;
     this.currentCard = this.deck[this.turns];
-    return turn;
+    return turn.giveFeedback();
+    // return turn;
+  }
+
+  calculatePercentCorrect() {
+    return Math.round(
+      ((this.turns - this.incorrectGuesses.length) / this.turns) * 100
+    );
+  }
+
+  endRound() {
+    let perentageCorrect = this.calculatePercentCorrect();
+    console.log(
+      `* Round over! * You answered ${perentageCorrect}% of the questions correctly!`
+    );
+    return `* Round over! * You answered ${perentageCorrect}% of the questions correctly!`;
   }
 }
 
