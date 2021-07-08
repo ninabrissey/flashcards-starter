@@ -5,21 +5,24 @@ const expect = chai.expect;
 
 describe('Deck', () => {
   let deck;
+  let card1;
+  let card2;
+  let card3;
 
   beforeEach(() => {
-    const card1 = new Card(
+    card1 = new Card(
       1,
       "What is Robbie's favorite animal",
       ['sea otter', 'pug', 'capybara'],
       'sea otter'
     );
-    const card2 = new Card(
+    card2 = new Card(
       14,
       'What organ is Khalid missing?',
       ['spleen', 'appendix', 'gallbladder'],
       'gallbladder'
     );
-    const card3 = new Card(
+    card3 = new Card(
       12,
       "What is Travis's middle name?",
       ['Lex', 'William', 'Fitzgerald'],
