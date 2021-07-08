@@ -6,11 +6,7 @@ const Round = require('../src/Round');
 const expect = chai.expect;
 
 describe('Round', () => {
-  let round;
-  let deck;
-  let card1;
-  let card2;
-  let card3;
+  let round, deck, card1, card2, card3;
 
   beforeEach(() => {
     card1 = new Card(
@@ -55,18 +51,31 @@ describe('Round', () => {
   it('should be able to take a turn, evaluate the guess, and switch to the next card', () => {
     expect(round.turns).to.equal(0);
 
-    const turnOne = round.takeTurn('sea otter');
-    const turnTwo = round.takeTurn('spleen');
+    const turnOne = round.takeTurn(card1.answers[0]);
+    const turnTwo = round.takeTurn(card2.answers[0]);
 
-    expect(turnOne).to.be.instanceOf(Turn);
-    expect(turnOne.evaluateGuess()).to.equal(true);
-    expect(turnTwo.evaluateGuess()).to.equal(false);
-    expect(turnOne.giveFeedback()).to.equal('correct!');
-    expect(turnTwo.giveFeedback()).to.equal('incorrect!');
+    expect(turnOne).to.equal('correct!');
+    expect(turnTwo).to.equal('incorrect!');
     expect(round.incorrectGuesses).to.deep.equal([14]);
     expect(round.turns).to.equal(2);
-    expect(round.currentCard).to.equal(card3); //only if there are only two round.takeTurns invoked prior to this
+    expect(round.currentCard).to.equal(card3);
   });
 
-  it('should calculate the percentage of correct answers in the deck', () => {});
+  it('should calculate the percentage of correct answers in the deck', () => {
+    round.takeTurn('sea otter');
+    round.takeTurn('spleen');
+    round.takeTurn('playing with bubble wrap');
+
+    expect(round.calculatePercentCorrect()).to.equal(67);
+  });
+
+  it('should end the round', () => {
+    round.takeTurn('sea otter');
+    round.takeTurn('spleen');
+    round.takeTurn('playing with bubble wrap');
+
+    expect(round.endRound()).to.equal(
+      '* Round over! * You answered 67% of the questions correctly!'
+    );
+  });
 });
