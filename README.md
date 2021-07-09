@@ -41,6 +41,7 @@ Through each iteration, we were asked to use TDD to drive implementation of your
 ## Organizational Resources
 
 - [Notion-Planning-Doc](https://www.notion.so/Mod-2-Flashcards-b0121d3f5c804a4fb4b8de2178a52b08)
+- [GitHub-Projects](https://github.com/ninabrissey/flashcards-starter/projects)
 
 ## Sources
 
