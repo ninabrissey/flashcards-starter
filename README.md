@@ -16,7 +16,7 @@ In this project, we were tasked to write a program to simulate a set of flash ca
 
 As a user will be able to see the questions, take guesses, and see a final score at the end of the round.
 
-In order to build good habits, we were tasked broken the project up into small classes to demonstrate objects that have a single responsibility.
+In order to build good habits, we were tasked to break the project up into small classes to demonstrate objects that have a single responsibility.
 
 Through each iteration, we were asked to use TDD to drive implementation of your code.
 
