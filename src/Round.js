@@ -14,14 +14,12 @@ class Round {
 
   takeTurn(userGuess) {
     let turn = new Turn(userGuess, this.currentCard);
-    // turn.evaluateGuess();
     if (!turn.evaluateGuess()) {
       this.incorrectGuesses.push(this.currentCard.id);
     }
     this.turns++;
     this.currentCard = this.deck[this.turns];
     return turn.giveFeedback();
-    // return turn;
   }
 
   calculatePercentCorrect() {
