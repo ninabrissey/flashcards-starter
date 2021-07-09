@@ -4,10 +4,7 @@ const Deck = require('../src/Deck');
 const expect = chai.expect;
 
 describe('Deck', () => {
-  let deck;
-  let card1;
-  let card2;
-  let card3;
+  let deck, card1, card2, card3;
 
   beforeEach(() => {
     card1 = new Card(
