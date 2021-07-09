@@ -2,7 +2,6 @@ const chai = require('chai');
 const Game = require('../src/Game');
 const Round = require('../src/Round');
 const data = require('../src/data');
-const Deck = require('../src/Deck');
 const prototypeQuestions = data.prototypeData;
 const expect = chai.expect;
 
