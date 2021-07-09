@@ -1,18 +1,19 @@
 # flashcards
 
 ## Table of Contents
-  - [Introduction](#introduction)
-  - [Technologies](#technologies)
-  - [Illustrations](#illustrations)
-  - [Set Up](#set-up)
-  - [Organizational Resources](#organizational-resources)
-  - [Sources](#sources)
-  - [Contributors](#contributors)
-  - [Project Specs](#project-specs)
+
+- [Introduction](#introduction)
+- [Technologies](#technologies)
+- [Illustrations](#illustrations)
+- [Set Up](#set-up)
+- [Organizational Resources](#organizational-resources)
+- [Sources](#sources)
+- [Contributors](#contributors)
+- [Project Specs](#project-specs)
 
 ## Introduction
 
-In this project, we were tasked to write a program to simulate a set of flash cards through the command line! 
+In this project, we were tasked to write a program to simulate a set of flash cards through the command line!
 
 As a user will be able to see the questions, take guesses, and see a final score at the end of the round.
 
@@ -21,9 +22,10 @@ In order to build good habits, we were tasked to break the project up into small
 Through each iteration, we were asked to use TDD to drive implementation of your code.
 
 ## Technologies
-  - Javascript
-  - node.js
-  - VS Code
+
+- Javascript
+- node.js
+- VS Code
 
 ## Illustrations
 
@@ -31,20 +33,24 @@ Through each iteration, we were asked to use TDD to drive implementation of your
 
 ## Set Up
 
-1. Fork this repo  
+1. Fork this repo
 2. Clone the repo to your local machine
 3. CD into th directory
-3. From inside the directory run node index.js
+4. From inside the directory run node index.js
 
 ## Organizational Resources
+
 - [Notion-Planning-Doc](https://www.notion.so/Mod-2-Flashcards-b0121d3f5c804a4fb4b8de2178a52b08)
 
 ## Sources
-  - [MDN](http://developer.mozilla.org/en-US/)
-  - [W3Schools](https://www.w3schools.com/)
+
+- [MDN](http://developer.mozilla.org/en-US/)
+- [W3Schools](https://www.w3schools.com/)
 
 ## Contributors
-  - [Nina Brissey](https://github.com/ninabrissey)
+
+- [Nina Brissey](https://github.com/ninabrissey)
 
 ## Project Specs
-  - The project spec & rubric can be found [here](https://frontend.turing.edu/projects/flash-cards.html)
+
+- The project spec & rubric can be found [here](https://frontend.turing.edu/projects/flash-cards.html)
