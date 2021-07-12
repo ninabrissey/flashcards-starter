@@ -26,6 +26,8 @@ Through each iteration, we were asked to use TDD to drive implementation of your
 - Javascript
 - node.js
 - VS Code
+- mocha 
+- chai
 
 ## Illustrations
 
